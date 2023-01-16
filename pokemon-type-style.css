@@ -1,0 +1,126 @@
+.grass {
+    background-image: linear-gradient(#8BC08B, #5E9068);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.fire {
+    background-image: linear-gradient(#EDB38C, #C45D4D);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.water {
+    background-image: linear-gradient(#8FC3CF, #6A8EB8);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.bug {
+    background-image: linear-gradient(#DCC4AA, #774D2E);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.normal {
+    background-image: linear-gradient(lightgray, gray);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.poison {
+    background-image: linear-gradient(#BBACC5, #875F7E);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.electric {
+    background-image: linear-gradient(#F3D77B, #EFB95D);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.ground {
+    background-image: linear-gradient(#A9895C, #472C1A);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.fairy {
+    background-image: linear-gradient(#F5DAD2, #F7CFD3);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.fighting {
+    background-image: linear-gradient(#EECBD7, #B4625B);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.psychic {
+    background-image: linear-gradient(#927691, #58514D);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.ghost {
+    background-image: linear-gradient(#D4BA50, darkgray);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.rock {
+    background-image: linear-gradient(#A8ABA5, #403A38);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.ice {
+    background-image: linear-gradient(#B9E4F1, #7DCBE9);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.dragon {
+    background-image: linear-gradient(#A0BCE2, #F2B56C);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.dark {
+    background-image: linear-gradient(#474E51, #233545);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.steel {
+    background-image: linear-gradient(#7A86A1, #65637D);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+
+}
+
+.all {
+    background-image: linear-gradient(#83B985, #C66351, #89BBCB, #F0BB5F, #F6D0D2, #676781);
+    border-bottom: 1px dashed black;
+    border-radius: 8px;
+    width: 50px;
+    text-align: center;
+}

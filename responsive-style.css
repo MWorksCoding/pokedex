@@ -1,0 +1,133 @@
+@media(max-width: 800px) {
+
+    h1 {
+        margin: 5%;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .preview-pokemon {
+        width: 300px;
+        margin-top: 5%;
+    }
+
+    .close-selection {
+        left: 85%;
+    }
+
+    .arrow-left {
+        right: 85%;
+    }
+
+
+    .arrow-right {
+        left: 85%;
+    }
+
+}
+
+@media(max-width: 620px) {
+
+    .overlay-menu {
+        width: -webkit-fill-available !important;
+        transform: translateX(100%) !important;
+    }
+
+    .mobile-menu-header {
+        font-size: 20px !important;
+    }
+
+    .amount-bar-close-button input {
+        font-size: 16px !important;
+        margin-left: 3% !important;
+        height: 35px !important;
+        width: 159px !important;
+        margin: 2% !important;
+    }
+
+    .amount-bar-close-button button {
+        margin: 0 !important;
+    }
+
+    .close-button-search-bar {
+        right: -10px !important;
+    }
+
+    .search-bar-close-button input {
+        width: 180px !important;
+        height: 37px !important;
+    }
+
+    .arrow-right {
+        height: 40px;
+        left: 85% !important;
+    }
+
+    .arrow-left {
+        height: 40px;
+        right: 85% !important;
+    }
+
+    .close-selection {
+        height: 40px;
+        left: 85% !important;
+        top: 1% !important;
+    }
+
+    .header img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .current-pokemon-card {
+        min-width: -webkit-fill-available;
+    }
+
+    .current-pokemon-name {
+        font-size: 25px;
+        padding: 2%;
+    }
+
+    .type-height-weight-space-around {
+        font-size: 16px;
+    }
+
+    .type-height-weight-stats {
+        margin: 1%;
+        padding: 1%;
+        font-size: 16px;
+    }
+
+    .current-pokemon-stats {
+        margin: 1%;
+        padding: 1%;
+    }
+
+    #current-pokemon-pic {
+        height: 150px;
+        width: 150px;
+        top: 0;
+    }
+
+    #show-pokemon-name {
+        margin: 0 !important;
+    }
+
+
+}
+
+
+@media(max-width: 400px) {
+
+    .arrow-right {
+        height: 40px;
+        left: 85% !important;
+        top: 40% !important;
+    }
+
+    .arrow-left {
+        height: 40px;
+        right: 85% !important;
+        top: 40%!important;
+    }
+}
