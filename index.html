@@ -26,10 +26,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#000000">
@@ -37,18 +34,15 @@
 </head>
 
 <body onload="loadPokemons()">
-    <!-- LADESCREEN -->
     <div class="loading-screen" id="loading-screen">
-        <!-- Achtung: muss nach dem fertigladen verschwinden -->
         <img class="loading-img" src="img/pokemon-g89728011f_1280.png">
         <div class="loading-text">Loading Pokemon Collection...</div>
     </div>
-    <!-- LADESCREEN -->
     <div id="pokemon-selection" class="pokemon-selection d-none">
     </div>
     <div class="header">
         <h1>Pokedex</h1>
-        <img src="img/pokemon-g89728011f_1280.png" title="Profil" class="profile-icon" id="user-header"
+        <img src="img/pokemon-g89728011f_1280.png" title="menu" class="profile-icon" id="user-header"
             onclick="showMenu()">
     </div>
     <div id="menu" class="overlay-menu">
@@ -63,9 +57,3 @@
 
 </body>
 </html>
-
-
-<!-- TO DO: 
-- Loading-Screen : Scroll Balken entfernen!
-- Name nachschauen/ändern, ist alles verständlich?
--->

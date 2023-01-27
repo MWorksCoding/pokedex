@@ -50,7 +50,34 @@
     height: 48px;
     width: 48px;
     border-radius: 100%;
+    animation: wiggle 2s linear infinite;
 }
+
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-20deg);
+    }
+    20% {
+      transform: rotateZ(15deg);
+    }
+    25% {
+      transform: rotateZ(-12deg);
+    }
+    30% {
+      transform: rotateZ(8deg);
+    }
+    35% {
+      transform: rotateZ(-5deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+
+
 
 img {
     cursor: pointer;
