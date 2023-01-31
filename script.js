@@ -3,6 +3,7 @@ const url = 'https://pokeapi.co/api/v2/pokemon/';
 let pokemonCollection = [];
 let pokemonSelection = 20;
 let pokemonAllSelection = 904;
+let pokemonForKeyboardNavigation = [];
 
 // ************* Load Pokemon Selection *************
 
@@ -15,7 +16,7 @@ async function loadPokemons() {
         pokemonCollection.push(currentPokemon); // Push
         renderPokemonSelectionScreen(i);
         setTimeout(function () {
-            document.getElementById(`loading-screen`).classList.add(`d-none`); // D-NONE BEACHTEN! Animation ggf. ändern
+            document.getElementById(`loading-screen`).classList.add(`d-none`);
             document.getElementById('pokedex').classList.remove('d-none');
         }, 2500);
     }
@@ -57,6 +58,7 @@ function showCurrentPokemon(i) {
     let container = document.getElementById('pokemon-selection');
     container.innerHTML = renderCurrentPokemonStats(i, name, img, types, height, weight, hpStat, attackStat, defenseStat, specialAttackStat, specialAttackStat, specialDefenseStat, speedStat);
     currentTypeBg(i);
+    pokemonForKeyboardNavigation.push(i);
 }
 
 function currentTypeBg(i) {
@@ -67,6 +69,9 @@ function currentTypeBg(i) {
 }
 
 function closeCurrentPokemon() {
+
+    pokemonForKeyboardNavigation.splice(0, pokemonForKeyboardNavigation.length);
+
     document.getElementById('pokemon-selection').classList.add('d-none');
 }
 
@@ -78,16 +83,22 @@ function nextPokemon(i) {
     }
     document.getElementById('pokemon-selection').innerHTML = '';
     showCurrentPokemon(i);
+    pokemonForKeyboardNavigation.splice(0, 1);
 }
 
 function previousPokemon(i) {
     if (i !== 0) {
         i--;
+        if (i == -1) {
+            i = 0;
+            i = pokemonCollection.length - 1;
+        }
     } else {
         i = pokemonCollection.length - 1;
     }
     document.getElementById('pokemon-selection').innerHTML = '';
     showCurrentPokemon(i);
+    pokemonForKeyboardNavigation.splice(0, 1);
 }
 
 // ************* Side Menu *************
@@ -156,7 +167,7 @@ async function loadAll() {
         pokemonCollection.push(currentPokemon); // Push
         renderPokemonSelectionScreen(i);
         setTimeout(function () {
-            document.getElementById(`loading-screen`).classList.add(`d-none`); // D-NONE BEACHTEN! Animation ggf. ändern
+            document.getElementById(`loading-screen`).classList.add(`d-none`);
         }, 6000);
     }
 }
@@ -194,3 +205,18 @@ function showPokemonAmount() {
         closeMenu();
     };
 }
+
+window.addEventListener("keydown",
+    e => {
+        // console.log(e);
+        if (e.key == "ArrowLeft") {
+            previousPokemon(pokemonForKeyboardNavigation);
+        }
+        if (e.key == "ArrowRight") {
+            nextPokemon(pokemonForKeyboardNavigation);
+        }
+        if (e.key == "Escape") {
+            closeCurrentPokemon();
+            closeMenu();
+        }
+    });
