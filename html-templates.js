@@ -181,23 +181,23 @@ function showSideMenu() {
             </table>
         </div>
         <div class="info-header-mobile wrap d-none" id="show-type-bar">
-            <span class="grass" id="grass" onclick="showTypeGrass()">grass</span>
-            <span class="fire" id="fire" onclick="showTypeFire()">fire</span>
-            <span class="water" id="water" onclick="showTypeWater()">water</span>
-            <span class="bug" id="bug" onclick="showTypeBug()">bug</span>
-            <span class="normal" id="normal" onclick="showTypeNormal()">normal</span>
-            <span class="poison" id="poison" onclick="showTypePoison()">poison</span>
-            <span class="electric" id="electric" onclick="showTypeElectric()">electric</span>
-            <span class="ground" id="ground" onclick="showTypeGround()">ground</span>
-            <span class="fairy" id="fairy" onclick="showTypeFairy()">fairy</span>
-            <span class="fighting" id="fighting" onclick="showTypeFighting()">fighting</span>
-            <span class="psychic" id="psychic" onclick="showTypePsychic()">psychic</span>
-            <span class="ghost" id="ghost" onclick="showTypeGhost()">ghost</span>
-            <span class="rock" id="rock" onclick="showTypeRock()">rock</span>
-            <span class="ice" id="ice" onclick="showTypeIce()">ice</span>
-            <span class="dragon" id="dragon" onclick="showTypeDragon()">dragon</span>
-            <span class="dark" id="dark" onclick="showTypeDark()">dark</span>
-            <span class="steel" id="steel" onclick="showTypeSteel()">steel</span>
+            <span class="grass" id="grass" onclick="showType('grass')">grass</span>
+            <span class="fire" id="fire" onclick="showType('fire')">fire</span>
+            <span class="water" id="water" onclick="showType('water')">water</span>
+            <span class="bug" id="bug" onclick="showType('bug')">bug</span>
+            <span class="normal" id="normal" onclick="showType('normal')">normal</span>
+            <span class="poison" id="poison" onclick="showType('poison')">poison</span>
+            <span class="electric" id="electric" onclick="showType('electric')">electric</span>
+            <span class="ground" id="ground" onclick="showType('ground')">ground</span>
+            <span class="fairy" id="fairy" onclick="showType('fairy')">fairy</span>
+            <span class="fighting" id="fighting" onclick="showType('fighting')">fighting</span>
+            <span class="psychic" id="psychic" onclick="showType('psychic')">psychic</span>
+            <span class="ghost" id="ghost" onclick="showType('ghost')">ghost</span>
+            <span class="rock" id="rock" onclick="showType('rock')">rock</span>
+            <span class="ice" id="ice" onclick="showType('ice')">ice</span>
+            <span class="dragon" id="dragon" onclick="showType('dragon')">dragon</span>
+            <span class="dark" id="dark" onclick="showType('dark')">dark</span>
+            <span class="steel" id="steel" onclick="showType('steel')">steel</span>
             <span class="all" onclick="showAllTypes()"> all</span>
             <img onclick="closeTypeBar()" id="type-close-button" class="close-button-search-bar"
                 src="img/close.png">
