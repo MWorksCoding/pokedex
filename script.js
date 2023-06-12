@@ -5,15 +5,13 @@ let pokemonSelection = 20;
 let pokemonAllSelection = 904;
 let pokemonForKeyboardNavigation = [];
 
-// ************* Load Pokemon Selection *************
-
 async function loadPokemons() {
     document.getElementById('pokedex').classList.add('overflow-hidden');
     for (let i = 0; i < pokemonSelection; i++) {
         const pokemon_url = url + (i + 1);
-        let response = await fetch(pokemon_url); // Zugriff auf API
-        currentPokemon = await response.json(); // Umwandlung JSON
-        pokemonCollection.push(currentPokemon); // Push
+        let response = await fetch(pokemon_url); // Access to API
+        currentPokemon = await response.json();
+        pokemonCollection.push(currentPokemon);
         renderPokemonSelectionScreen(i);
         setTimeout(function () {
             document.getElementById(`loading-screen`).classList.add(`d-none`);
@@ -39,8 +37,6 @@ function typeBg(i) {
         document.getElementById(`pokemon-info-content-bg(${i})`).classList.add(name)
     };
 }
-
-// ************* Pokemon Card *************
 
 function showCurrentPokemon(i) {
     document.getElementById('pokemon-selection').classList.remove('d-none');
@@ -101,8 +97,6 @@ function previousPokemon(i) {
     pokemonForKeyboardNavigation.splice(0, 1);
 }
 
-// ************* Side Menu *************
-
 function showMenu() {
     let sideMenu = document.getElementById('menu');
     sideMenu.innerHTML = showSideMenu();
@@ -111,8 +105,6 @@ function showMenu() {
 function closeMenu() {
     document.getElementById('menu').classList.remove('show-overlay-menu');
 }
-
-// ************* Search Bar *************
 
 function showSearchBar() {
     document.getElementById('show-search-bar-close-button').classList.remove('d-none')
@@ -144,14 +136,12 @@ function showPokemonName() {
     closeMenu();
 }
 
-// ************* Load More Section *************
-
 function loadMore() {
     showLoadingScreen();
     let list = document.getElementById('pokedex');
     list.innerHTML = '';
     pokemonSelection += 20;
-    pokemonCollection = []; // WICHTIG: LISTE ERST LEEREN!!
+    pokemonCollection = [];
     loadPokemons();
 }
 
@@ -162,9 +152,9 @@ async function loadAll() {
     pokemonCollection = [];
     for (let i = 0; i < pokemonAllSelection; i++) {
         const pokemon_url = url + (i + 1);
-        let response = await fetch(pokemon_url); // Zugriff auf API
-        currentPokemon = await response.json(); // Umwandlung JSON
-        pokemonCollection.push(currentPokemon); // Push
+        let response = await fetch(pokemon_url); // Access to API
+        currentPokemon = await response.json();
+        pokemonCollection.push(currentPokemon); 
         renderPokemonSelectionScreen(i);
         setTimeout(function () {
             document.getElementById(`loading-screen`).classList.add(`d-none`);
@@ -176,8 +166,6 @@ function showLoadingScreen() {
     document.getElementById(`loading-screen`).classList.remove(`d-none`);
     document.getElementById(`pokedex`).classList.add(`d-none`);
 }
-
-// ************* Amount Bar *************
 
 function showAmountBar() {
     document.getElementById('show-amount-bar').classList.remove('d-none')
@@ -220,3 +208,42 @@ window.addEventListener("keydown",
             closeMenu();
         }
     });
+
+function showAllTypes() {
+    let container = document.getElementById('pokedex');
+    container.innerHTML = '';
+    loadPokemons();
+}
+
+function showTypeBar() {
+    document.getElementById('show-type-bar').classList.remove('d-none')
+}
+function closeTypeBar() {
+    document.getElementById('show-type-bar').classList.add('d-none')
+}
+
+function emptyTypeList() {
+    let typeList = document.getElementById('pokedex');
+    typeList.innerHTML = '';
+}
+
+function closeTypeBarAndCloseMenu() {
+    closeTypeBar();
+    closeMenu();
+}
+
+function showType(param) {
+    emptyTypeList();
+    for (let i = 0; i < pokemonCollection.length; i++) {
+        let name = pokemonCollection[i][`name`];
+        let id = pokemonCollection[i][`id`];
+        let types = pokemonCollection[i][`types`][0][`type`][`name`];
+        let img = pokemonCollection[i][`sprites`][`other`][`official-artwork`][`front_default`];
+        if (param == types) {
+            let typeList = document.getElementById('pokedex');
+            typeList.innerHTML += renderPokemonCard(i, name, id, types, img);
+            typeBg(i);
+        }
+    }
+    closeTypeBarAndCloseMenu()
+}
