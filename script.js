@@ -2,22 +2,25 @@ let currentPokemon;
 const url = 'https://pokeapi.co/api/v2/pokemon/';
 let pokemonCollection = [];
 let pokemonSelection = 20;
-let pokemonAllSelection = 904;
+let pokemonAllSelection = 151;
 let pokemonForKeyboardNavigation = [];
 
 async function loadPokemons() {
+    showLoadingScreen();
     document.getElementById('pokedex').classList.add('overflow-hidden');
     for (let i = 0; i < pokemonSelection; i++) {
         const pokemon_url = url + (i + 1);
-        let response = await fetch(pokemon_url); // Access to API
-        currentPokemon = await response.json();
-        pokemonCollection.push(currentPokemon);
-        renderPokemonSelectionScreen(i);
-        setTimeout(function () {
-            document.getElementById(`loading-screen`).classList.add(`d-none`);
-            document.getElementById('pokedex').classList.remove('d-none');
-        }, 2500);
+        try {
+            let response = await fetch(pokemon_url); // Access to API
+            currentPokemon = await response.json();
+            pokemonCollection.push(currentPokemon);
+            renderPokemonSelectionScreen(i);
+        } catch (error) {
+            console.error("Error fetching Pokemon data:", error);
+        }
     }
+    document.getElementById('pokedex').classList.remove('d-none'); // Show the pokedex
+    hideLoadingScreen();
 }
 
 function renderPokemonSelectionScreen(i) {
@@ -152,19 +155,26 @@ async function loadAll() {
     pokemonCollection = [];
     for (let i = 0; i < pokemonAllSelection; i++) {
         const pokemon_url = url + (i + 1);
-        let response = await fetch(pokemon_url); // Access to API
-        currentPokemon = await response.json();
-        pokemonCollection.push(currentPokemon); 
-        renderPokemonSelectionScreen(i);
-        setTimeout(function () {
-            document.getElementById(`loading-screen`).classList.add(`d-none`);
-        }, 6000);
+        try {
+            let response = await fetch(pokemon_url); // Access to API
+            currentPokemon = await response.json();
+            pokemonCollection.push(currentPokemon);
+            renderPokemonSelectionScreen(i);
+        } catch (error) {
+            console.error("Error fetching Pokemon data:", error);
+        }
     }
+    hideLoadingScreen();
 }
 
 function showLoadingScreen() {
     document.getElementById(`loading-screen`).classList.remove(`d-none`);
     document.getElementById(`pokedex`).classList.add(`d-none`);
+}
+
+function hideLoadingScreen() {
+    document.getElementById('loading-screen').classList.add('d-none');
+    document.getElementById('pokedex').classList.remove('d-none');
 }
 
 function showAmountBar() {
